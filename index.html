@@ -1,0 +1,1136 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alanerdwin Dicdican Seton — Steel Fixer / Rod Bar Carpenter</title>
+  <meta name="description" content="Professional portfolio of Alanerdwin Dicdican Seton — Steel Fixer and Rod Bar Specialist with international construction experience in Japan and the Philippines.">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script id="tailwind-config">
+    try {
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-container": "#606365",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              "tertiary-container": "#55585c",
+              "surface-container": "#e9edff",
+              "primary-fixed": "#ebddff",
+              "on-tertiary": "#ffffff",
+              "surface-variant": "#dce2f7",
+              "secondary-fixed-dim": "#c5c6c8",
+              "on-tertiary-fixed": "#191c1f",
+              "surface-container-high": "#e1e8fd",
+              "secondary-container": "#dee0e2",
+              "on-primary-fixed-variant": "#5b00c5",
+              "on-primary-fixed": "#250059",
+              "error-container": "#ffdad6",
+              "outline-variant": "#ccc3d7",
+              "on-tertiary-container": "#ccced2",
+              "primary-fixed-dim": "#d3bbff",
+              "surface": "#f9f9ff",
+              "on-background": "#141b2b",
+              "surface-bright": "#f9f9ff",
+              "on-error-container": "#93000a",
+              "on-surface-variant": "#4a4455",
+              "surface-container-low": "#f1f3ff",
+              "primary": "#5300b7",
+              "on-secondary-fixed-variant": "#444749",
+              "tertiary-fixed-dim": "#c4c7ca",
+              "secondary-fixed": "#e1e2e4",
+              "on-secondary-fixed": "#191c1e",
+              "background": "#f9f9ff",
+              "on-primary-container": "#dac5ff",
+              "on-error": "#ffffff",
+              "error": "#ba1a1a",
+              "on-tertiary-fixed-variant": "#44474a",
+              "surface-tint": "#7331df",
+              "surface-dim": "#d3daef",
+              "inverse-on-surface": "#edf0ff",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#141b2b",
+              "surface-container-highest": "#dce2f7",
+              "primary-container": "#6d28d9",
+              "outline": "#7b7486",
+              "inverse-primary": "#d3bbff",
+              "tertiary-fixed": "#e0e2e6",
+              "inverse-surface": "#293040",
+              "secondary": "#5c5f60",
+              "tertiary": "#3e4144"
+            },
+            borderRadius: {
+              DEFAULT: "1rem",
+              lg: "2rem",
+              xl: "3rem",
+              full: "9999px"
+            },
+            spacing: {
+              "margin-page": "3rem",
+              "stack-sm": "0.75rem",
+              "inset-pill": "0.5rem 1.25rem",
+              "gutter-grid": "2rem",
+              "stack-md": "1.5rem",
+              "stack-xl": "2.5rem"
+            },
+            fontFamily: {
+              "label-caps": ["Work Sans"],
+              "headline-md": ["Work Sans"],
+              "body-sm": ["Work Sans"],
+              "headline-xl": ["Work Sans"],
+              "headline-lg": ["Work Sans"],
+              "body-md": ["Work Sans"],
+              "body-lg": ["Work Sans"]
+            },
+            fontSize: {
+              "label-caps": ["12px", { lineHeight: "1", letterSpacing: "0.1em", fontWeight: "600" }],
+              "headline-md": ["20px", { lineHeight: "1.4", letterSpacing: "0.05em", fontWeight: "600" }],
+              "body-sm": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+              "headline-xl": ["48px", { lineHeight: "1.1", fontWeight: "700" }],
+              "headline-lg": ["32px", { lineHeight: "1.2", fontWeight: "600" }],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }]
+            }
+          }
+        }
+      };
+    } catch (_e) {}
+  </script>
+  <style>
+    .bento-card {
+      background: #ffffff;
+      box-shadow: 0 1px 3px rgba(20, 27, 43, 0.06), 0 4px 16px rgba(83, 0, 183, 0.04);
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+
+    /* Screen-only controls */
+    .no-print { }
+
+    /* Off-screen but renderable capture target (must NOT be display:none or opacity:0) */
+    #pdf-root {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 794px;
+      background: #f9f9ff;
+      color: #141b2b;
+      font-family: "Work Sans", sans-serif;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    #pdf-root.is-capturing {
+      z-index: 50;
+    }
+
+    #pdf-root .pdf-page {
+      width: 794px;
+      height: 1123px;
+      padding: 40px 36px;
+      box-sizing: border-box;
+      background: #f9f9ff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #pdf-generating-overlay {
+      display: none;
+    }
+
+    #pdf-generating-overlay.active {
+      display: flex;
+    }
+
+    /* Print fallback: A4 pages, no chrome */
+    @media print {
+      @page {
+        size: A4;
+        margin: 12mm;
+      }
+
+      html, body {
+        background: #fff !important;
+        color: #141b2b !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .no-print,
+      header.site-header,
+      footer.site-footer,
+      .hire-cta,
+      #download-pdf-btn,
+      #pdf-generating-overlay {
+        display: none !important;
+      }
+
+      body > main,
+      body > header,
+      body > footer {
+        display: none !important;
+      }
+
+      #pdf-root {
+        position: static !important;
+        visibility: visible !important;
+        left: auto !important;
+        top: auto !important;
+        width: auto !important;
+        z-index: auto !important;
+        pointer-events: auto !important;
+      }
+
+      #pdf-root .pdf-page {
+        width: auto !important;
+        height: auto !important;
+        min-height: 0 !important;
+        page-break-after: always;
+        break-after: page;
+      }
+
+      #pdf-root .pdf-page:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+
+      a {
+        text-decoration: none !important;
+        color: inherit !important;
+      }
+
+      a[href]::after {
+        content: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased">
+
+  <!-- Top Navigation -->
+  <header class="site-header no-print w-full top-0 sticky z-50 bg-surface border-b border-surface-container-high">
+    <div class="flex justify-between items-center max-w-[1200px] mx-auto px-4 sm:px-margin-page py-stack-md gap-3">
+      <h1 class="font-headline-md text-headline-md font-bold text-primary text-base sm:text-headline-md">Construction Professional</h1>
+      <nav class="hidden md:flex gap-stack-md" aria-label="Primary">
+        <a href="#profile" class="nav-link text-primary font-bold border-b-2 border-primary pb-1 font-label-caps text-label-caps">Profile</a>
+        <a href="#experience" class="nav-link text-on-secondary-container font-medium hover:text-primary transition-colors duration-200 font-label-caps text-label-caps">Experience</a>
+        <a href="#skills" class="nav-link text-on-secondary-container font-medium hover:text-primary transition-colors duration-200 font-label-caps text-label-caps">Skills</a>
+        <a href="#education" class="nav-link text-on-secondary-container font-medium hover:text-primary transition-colors duration-200 font-label-caps text-label-caps">Education</a>
+        <a href="#personal" class="nav-link text-on-secondary-container font-medium hover:text-primary transition-colors duration-200 font-label-caps text-label-caps">Personal</a>
+      </nav>
+      <button id="download-pdf-btn" type="button" class="bg-primary text-on-primary rounded-full font-label-caps text-label-caps active:scale-95 transition-all py-2 px-4 whitespace-nowrap">
+        Download PDF
+      </button>
+    </div>
+  </header>
+
+  <!-- PDF generating overlay -->
+  <div id="pdf-generating-overlay" class="no-print fixed inset-0 z-[100] bg-on-surface/40 items-center justify-center backdrop-blur-sm">
+    <div class="bg-surface-container-lowest rounded-lg px-8 py-6 shadow-xl text-center max-w-sm mx-4">
+      <span class="material-symbols-outlined text-primary text-4xl animate-pulse" aria-hidden="true">picture_as_pdf</span>
+      <p class="mt-3 font-headline-md text-headline-md text-on-surface">Preparing PDF…</p>
+      <p class="mt-1 font-body-sm text-body-sm text-on-secondary-container">Formatting portfolio for hiring reference</p>
+    </div>
+  </div>
+
+  <main class="max-w-[1200px] mx-auto px-4 sm:px-margin-page py-stack-xl flex flex-col md:grid md:grid-cols-12 gap-gutter-grid">
+
+    <!-- Sidebar -->
+    <aside class="md:col-span-4 flex flex-col gap-stack-md">
+      <div class="bento-card p-stack-md rounded-lg flex flex-col items-center text-center">
+        <div class="w-32 h-32 rounded-full border-4 border-surface-container-highest overflow-hidden mb-stack-md">
+          <img
+            src="assets/portrait.jpg"
+            alt="Professional portrait of Alanerdwin Dicdican Seton"
+            class="w-full h-full object-cover"
+            width="128"
+            height="128"
+          >
+        </div>
+        <h2 class="font-headline-md text-headline-md text-on-surface">Alanerdwin Dicdican Seton</h2>
+        <span class="mt-stack-sm inline-block bg-primary text-on-primary px-4 py-1 rounded-full font-label-caps text-[10px] tracking-widest">STEEL FIXER / ROD BAR (CARPENTER)</span>
+        <p id="sidebar-experience" class="mt-3 font-body-sm text-body-sm text-on-secondary-container">
+          <span class="text-primary font-bold" data-experience-label>—</span> total experience
+        </p>
+      </div>
+
+      <div class="bento-card p-stack-md rounded-lg space-y-stack-md">
+        <div class="flex items-center gap-stack-sm">
+          <span class="material-symbols-outlined text-primary" aria-hidden="true">contact_page</span>
+          <span class="font-label-caps text-label-caps text-primary">CONTACT INFORMATION</span>
+        </div>
+        <div class="space-y-4">
+          <div>
+            <p class="font-label-caps text-[10px] text-on-secondary-container mb-1">FACEBOOK PROFILE</p>
+            <a href="https://facebook.com/madeth.seton" class="font-body-sm text-body-sm text-primary hover:underline block truncate" target="_blank" rel="noopener noreferrer">facebook.com/madeth.seton</a>
+          </div>
+          <div>
+            <p class="font-label-caps text-[10px] text-on-secondary-container mb-1">FACEBOOK MESSENGER</p>
+            <a href="https://m.me/madeth.seton" class="font-body-sm text-body-sm text-primary hover:underline block" target="_blank" rel="noopener noreferrer">m.me/madeth.seton</a>
+          </div>
+          <div>
+            <p class="font-label-caps text-[10px] text-on-secondary-container mb-1">PHONE (Philippines)</p>
+            <a href="tel:+639278000491" class="font-body-sm text-body-sm text-primary hover:underline block">+6392 780 00491</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bento-card p-stack-md rounded-lg space-y-stack-md">
+        <div class="flex items-center gap-stack-sm">
+          <span class="material-symbols-outlined text-primary" aria-hidden="true">link</span>
+          <span class="font-label-caps text-label-caps text-primary">EXTERNAL LINKS</span>
+        </div>
+        <div class="flex flex-col gap-3">
+          <a href="https://bit.ly/3VovEXz" class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+            <span class="material-symbols-outlined text-base" aria-hidden="true">verified</span>
+            <u><strong>My Certificates</strong></u>
+          </a>
+          <a href="https://bit.ly/3laL2Uz" class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+            <span class="material-symbols-outlined text-base" aria-hidden="true">construction</span>
+            <u><strong>Recent Project Photos</strong></u>
+          </a>
+        </div>
+      </div>
+
+      <div id="skills" class="bento-card p-stack-md rounded-lg">
+        <div class="flex items-center gap-stack-sm mb-stack-md">
+          <span class="material-symbols-outlined text-primary" aria-hidden="true">construction</span>
+          <span class="font-label-caps text-label-caps text-primary">TECHNICAL SKILLS</span>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm px-3 py-1.5 rounded-full">Heavy Steel Works</span>
+          <span class="bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm px-3 py-1.5 rounded-full">Steel bar, Rod &amp; Mesh Layout</span>
+          <span class="bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm px-3 py-1.5 rounded-full">Technical Specs Interpretation</span>
+          <span class="bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm px-3 py-1.5 rounded-full">Blueprint Reading</span>
+          <span class="bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm px-3 py-1.5 rounded-full">Beam &amp; Post Setup</span>
+          <span class="bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm px-3 py-1.5 rounded-full">Nihonggo-English Translation</span>
+          <span class="bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm px-3 py-1.5 rounded-full">Nihonggo-Filipino Translation</span>
+          <span class="bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm px-3 py-1.5 rounded-full">English-Filipino Translation</span>
+        </div>
+      </div>
+
+      <div class="bento-card p-stack-md rounded-lg">
+        <div class="flex items-center gap-stack-sm mb-stack-md">
+          <span class="material-symbols-outlined text-primary" aria-hidden="true">translate</span>
+          <span class="font-label-caps text-label-caps text-primary">LANGUAGES</span>
+        </div>
+        <div class="space-y-stack-sm">
+          <div class="flex justify-between items-center">
+            <span class="font-body-sm text-body-sm">English</span>
+            <span class="text-[10px] text-primary font-bold">PROFICIENT</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="font-body-sm text-body-sm">Nihonggo (Japanese)</span>
+            <span class="text-[10px] text-primary font-bold">FLUENT</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="font-body-sm text-body-sm">Tagalog &amp; Cebuano</span>
+            <span class="text-[10px] text-primary font-bold">NATIVE</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://m.me/madeth.seton" class="hire-cta no-print w-full bg-primary text-on-primary py-4 rounded-xl font-headline-md text-headline-md hover:opacity-90 transition-all active:scale-95 shadow-lg shadow-primary/20 text-center block" target="_blank" rel="noopener noreferrer">
+        HIRE ME
+      </a>
+    </aside>
+
+    <!-- Main content -->
+    <div class="md:col-span-8 flex flex-col gap-stack-xl">
+
+      <!-- Hero -->
+      <section id="profile" class="relative rounded-lg overflow-hidden min-h-[12rem] flex items-center px-6 sm:px-stack-xl py-8 bg-gradient-to-br from-surface-container-low via-surface to-surface-container-high">
+        <div class="absolute inset-0 bg-primary opacity-5 pointer-events-none"></div>
+        <div class="relative">
+          <p class="font-label-caps text-label-caps text-primary mb-3 tracking-widest">
+            TOTAL EXPERIENCE · <span data-experience-label>—</span>
+          </p>
+          <h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Dedicated Professional Excellence</h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+            Steel Fixer and Rod Bar Specialist with <span data-experience-inline class="text-primary font-semibold">—</span> of international experience in high-scale industrial construction, automotive manufacturing, and machinery infrastructure.
+          </p>
+        </div>
+      </section>
+
+      <!-- Work Experience -->
+      <section id="experience" class="space-y-stack-md">
+        <div class="flex items-center gap-4 mb-stack-md">
+          <div class="h-px bg-outline-variant flex-grow"></div>
+          <div class="border-2 border-primary rounded-full px-4 py-2">
+            <span class="font-label-caps text-label-caps text-primary">WORK EXPERIENCE</span>
+          </div>
+          <div class="h-px bg-outline-variant flex-grow"></div>
+        </div>
+
+        <!-- Job 1: Ishiji -->
+        <article class="bento-card p-6 sm:p-stack-xl rounded-lg border-l-4 border-l-primary relative" data-job data-start="2015-09-01" data-end="present">
+          <div class="flex flex-col md:flex-row md:justify-between items-start mb-stack-md gap-2">
+            <div>
+              <h3 class="font-headline-md text-headline-md text-on-surface">Steel Fixer / Rod Bar (Carpenter)</h3>
+              <p class="font-body-md text-body-md italic text-primary">ISHIJI KOGYO CO. LTD.</p>
+            </div>
+            <div class="bg-surface-container-high px-4 py-1 rounded-full shrink-0">
+              <span class="font-label-caps text-[11px] text-on-surface-variant job-duration">SEPT 2015 – PRESENT</span>
+            </div>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-secondary-container mb-stack-md">Japan-based industrial construction &amp; machinery specialist company focusing on heavy infrastructure and precision engineering.</p>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-gutter-grid gap-y-3">
+            <li class="flex gap-3 items-start font-body-sm text-body-sm text-on-surface">
+              <span class="material-symbols-outlined text-primary text-sm mt-1" aria-hidden="true">check_circle</span>
+              Operate advanced tools, machinery, and industrial equipment.
+            </li>
+            <li class="flex gap-3 items-start font-body-sm text-body-sm text-on-surface">
+              <span class="material-symbols-outlined text-primary text-sm mt-1" aria-hidden="true">check_circle</span>
+              Measure and precisely cut steel bars to millimeter accuracy.
+            </li>
+            <li class="flex gap-3 items-start font-body-sm text-body-sm text-on-surface">
+              <span class="material-symbols-outlined text-primary text-sm mt-1" aria-hidden="true">check_circle</span>
+              Expert bend and layout of steel bars, rod, and mesh frameworks.
+            </li>
+            <li class="flex gap-3 items-start font-body-sm text-body-sm text-on-surface">
+              <span class="material-symbols-outlined text-primary text-sm mt-1" aria-hidden="true">check_circle</span>
+              Interpretation of complex technical specifications and blueprints.
+            </li>
+            <li class="flex gap-3 items-start font-body-sm text-body-sm text-on-surface">
+              <span class="material-symbols-outlined text-primary text-sm mt-1" aria-hidden="true">check_circle</span>
+              Positioning of steel bars and plates for large-scale units.
+            </li>
+            <li class="flex gap-3 items-start font-body-sm text-body-sm text-on-surface">
+              <span class="material-symbols-outlined text-primary text-sm mt-1" aria-hidden="true">check_circle</span>
+              Infrastructure: Beam, post, bridge, and large-scale house work.
+            </li>
+            <li class="flex gap-3 items-start font-body-sm text-body-sm text-on-surface">
+              <span class="material-symbols-outlined text-primary text-sm mt-1" aria-hidden="true">check_circle</span>
+              Manual and automated welding assembly for mesh structures.
+            </li>
+            <li class="flex gap-3 items-start font-body-sm text-body-sm text-on-surface">
+              <span class="material-symbols-outlined text-primary text-sm mt-1" aria-hidden="true">check_circle</span>
+              Precise fitting of spacers and structural fixing for concrete bases.
+            </li>
+          </ul>
+        </article>
+
+        <!-- Job 2: ZZM -->
+        <article class="bento-card p-6 sm:p-stack-xl rounded-lg border-l-4 border-l-outline-variant relative" data-job data-start="2011-07-01" data-end="2011-09-01">
+          <div class="flex flex-col md:flex-row md:justify-between items-start mb-stack-md gap-2">
+            <div>
+              <h3 class="font-headline-md text-headline-md text-on-surface">Steel Fixer / Rod Bar (Carpenter-Contractor)</h3>
+              <p class="font-body-md text-body-md italic text-primary">ZZM Marine Services General Contractor</p>
+            </div>
+            <div class="bg-surface-container-low px-4 py-1 rounded-full shrink-0">
+              <span class="font-label-caps text-[11px] text-on-surface-variant job-duration">JULY 2011 – SEPT 2011 (2 MONTHS)</span>
+            </div>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-secondary-container mb-stack-md">Specialized manpower agency focusing on maritime and heavy steel-work projects.</p>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-gutter-grid gap-y-3">
+            <li class="flex gap-3 items-start font-body-sm text-body-sm text-on-surface">
+              <span class="material-symbols-outlined text-secondary text-sm mt-1" aria-hidden="true">fiber_manual_record</span>
+              Maintained rigorous equipment safety and operation standards.
+            </li>
+            <li class="flex gap-3 items-start font-body-sm text-body-sm text-on-surface">
+              <span class="material-symbols-outlined text-secondary text-sm mt-1" aria-hidden="true">fiber_manual_record</span>
+              Executed precision cuts for high-tension steel reinforcement.
+            </li>
+            <li class="flex gap-3 items-start font-body-sm text-body-sm text-on-surface">
+              <span class="material-symbols-outlined text-secondary text-sm mt-1" aria-hidden="true">fiber_manual_record</span>
+              Collaborated on large-scale steel mesh layout for foundations.
+            </li>
+            <li class="flex gap-3 items-start font-body-sm text-body-sm text-on-surface">
+              <span class="material-symbols-outlined text-secondary text-sm mt-1" aria-hidden="true">fiber_manual_record</span>
+              Blueprint verification and on-site technical adjustments.
+            </li>
+          </ul>
+        </article>
+
+        <!-- Job 3: Lear -->
+        <article class="bento-card p-6 sm:p-stack-xl rounded-lg border-l-4 border-l-outline-variant relative" data-job data-start="2003-07-01" data-end="2011-04-01">
+          <div class="flex flex-col md:flex-row md:justify-between items-start mb-stack-md gap-2">
+            <div>
+              <h3 class="font-headline-md text-headline-md text-on-surface">Circuit Cutting — Machine Operator</h3>
+              <p class="font-body-md text-body-md italic text-primary">Lear Automotive (Netherlands) B.V. Phils. Branch</p>
+            </div>
+            <div class="bg-surface-container-low px-4 py-1 rounded-full shrink-0">
+              <span class="font-label-caps text-[11px] text-on-surface-variant job-duration">JULY 2003 – APRIL 2011 (8 YEARS &amp; 9 MONTHS)</span>
+            </div>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-secondary-container mb-stack-md">An automotive manufacturing company specializing in electrical parts and harness assembly.</p>
+          <ul class="flex flex-col gap-3">
+            <li class="flex gap-3 items-start font-body-sm text-body-sm text-on-surface">
+              <span class="material-symbols-outlined text-secondary text-sm mt-1" aria-hidden="true">fiber_manual_record</span>
+              Circuit cutting on harness assembly both front and rear part of the car based on ISO standards.
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- Education -->
+      <section id="education" class="space-y-stack-md">
+        <div class="flex items-center gap-4 mb-stack-md">
+          <div class="h-px bg-outline-variant flex-grow"></div>
+          <div class="border-2 border-outline-variant rounded-full px-4 py-2">
+            <span class="font-label-caps text-label-caps text-on-surface-variant">EDUCATION HISTORY</span>
+          </div>
+          <div class="h-px bg-outline-variant flex-grow"></div>
+        </div>
+        <div class="bento-card p-stack-md rounded-lg">
+          <h3 class="font-headline-md text-headline-md text-on-surface">Bohol National High School</h3>
+          <p class="font-body-md text-body-md text-on-secondary-container">High School Graduate · Cabul-an, Buenavista, Bohol</p>
+        </div>
+      </section>
+
+      <!-- Personal Information -->
+      <section id="personal" class="space-y-stack-md">
+        <div class="flex items-center gap-4 mb-stack-md">
+          <div class="h-px bg-outline-variant flex-grow"></div>
+          <div class="border-2 border-outline-variant rounded-full px-4 py-2">
+            <span class="font-label-caps text-label-caps text-on-surface-variant">PERSONAL INFORMATION</span>
+          </div>
+          <div class="h-px bg-outline-variant flex-grow"></div>
+        </div>
+        <div class="bento-card p-6 sm:p-stack-xl rounded-lg grid grid-cols-1 md:grid-cols-2 gap-stack-xl">
+          <div class="space-y-1">
+            <p class="font-label-caps text-[10px] text-on-secondary-container uppercase">Age</p>
+            <p class="font-body-md text-body-md font-semibold text-on-surface" id="age-display">—</p>
+          </div>
+          <div class="space-y-1">
+            <p class="font-label-caps text-[10px] text-on-secondary-container uppercase">Birthday</p>
+            <p class="font-body-md text-body-md font-semibold text-on-surface">January 7, 1985</p>
+          </div>
+          <div class="space-y-1 md:col-span-2">
+            <p class="font-label-caps text-[10px] text-on-secondary-container uppercase">Current Address</p>
+            <p class="font-body-md text-body-md text-on-surface">Purok Nangka, Brgy. Day-as, Cordova Cebu,Philippines 6017</p>
+          </div>
+          <div class="space-y-1">
+            <p class="font-label-caps text-[10px] text-on-secondary-container uppercase">Contact Number</p>
+            <a href="tel:+639278000491" class="font-headline-md text-headline-md font-bold text-primary">+6392 780 00491</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer no-print w-full bg-surface border-t border-outline-variant mt-stack-xl">
+    <div class="flex flex-col md:flex-row justify-between items-center max-w-[1200px] mx-auto px-4 sm:px-margin-page py-stack-md gap-4">
+      <span class="font-label-caps text-label-caps text-secondary uppercase">© <span id="year-display">2026</span> Alanerdwin Dicdican Seton. All rights reserved.</span>
+      <button type="button" id="download-pdf-footer" class="font-label-caps text-label-caps text-primary font-bold hover:underline">
+        Download PDF
+      </button>
+    </div>
+  </footer>
+
+  <!-- PDF uses jsPDF (no HTML capture target needed) -->
+
+  <script>
+    (function () {
+      const BIRTHDAY = new Date(1985, 0, 7); // Jan 7, 1985
+
+      const JOBS = [
+        { start: new Date(2015, 8, 1), end: null, labelStart: "SEPT 2015", labelEnd: "JUL 2026" },
+        { start: new Date(2011, 6, 1), end: new Date(2011, 8, 1), labelStart: "JULY 2011", labelEnd: "SEPT 2011" },
+        { start: new Date(2003, 6, 1), end: new Date(2011, 3, 1), labelStart: "JULY 2003", labelEnd: "APRIL 2011" }
+      ];
+
+      function monthDiff(from, to) {
+        let months = (to.getFullYear() - from.getFullYear()) * 12 + (to.getMonth() - from.getMonth());
+        if (to.getDate() < from.getDate()) months -= 1;
+        return Math.max(0, months);
+      }
+
+      function formatDuration(totalMonths) {
+        const years = Math.floor(totalMonths / 12);
+        const months = totalMonths % 12;
+        const y = years === 1 ? "1 YEAR" : years + " YEARS";
+        const m = months === 1 ? "1 MONTH" : months + " MONTHS";
+        if (years === 0) return m;
+        if (months === 0) return y;
+        return y + ", " + m;
+      }
+
+      function formatDurationSentence(totalMonths) {
+        const years = Math.floor(totalMonths / 12);
+        const months = totalMonths % 12;
+        const y = years === 1 ? "1 year" : years + " years";
+        const m = months === 1 ? "1 month" : months + " months";
+        if (years === 0) return m;
+        if (months === 0) return y;
+        return y + " and " + m;
+      }
+
+      function computeTotals(now) {
+        let total = 0;
+        const perJob = JOBS.map(function (job) {
+          const end = job.end || now;
+          const months = monthDiff(job.start, end);
+          total += months;
+          return months;
+        });
+        return { total: total, perJob: perJob };
+      }
+
+      function computeAge(now) {
+        let age = now.getFullYear() - BIRTHDAY.getFullYear();
+        const m = now.getMonth() - BIRTHDAY.getMonth();
+        if (m < 0 || (m === 0 && now.getDate() < BIRTHDAY.getDate())) age -= 1;
+        return age;
+      }
+
+      function updateExperienceUI() {
+        const now = new Date();
+        const { total, perJob } = computeTotals(now);
+        const caps = formatDuration(total);
+        const sentence = formatDurationSentence(total);
+
+        document.querySelectorAll("[data-experience-label]").forEach(function (el) {
+          el.textContent = caps;
+        });
+        document.querySelectorAll("[data-experience-inline]").forEach(function (el) {
+          el.textContent = sentence;
+        });
+
+        const jobEls = document.querySelectorAll("[data-job]");
+        jobEls.forEach(function (el, i) {
+          const badge = el.querySelector(".job-duration");
+          if (!badge || !JOBS[i]) return;
+          const job = JOBS[i];
+          const range = job.labelStart + " – " + job.labelEnd;
+          badge.textContent = range + " (" + formatDuration(perJob[i]) + ")";
+        });
+
+        const ageEl = document.getElementById("age-display");
+        if (ageEl) ageEl.textContent = computeAge(now) + " years old";
+
+        const yearEl = document.getElementById("year-display");
+        if (yearEl) yearEl.textContent = String(now.getFullYear());
+      }
+
+      /* Scroll spy */
+      function initScrollSpy() {
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll("header nav a.nav-link");
+
+        window.addEventListener("scroll", function () {
+          let current = "";
+          sections.forEach(function (section) {
+            if (window.pageYOffset >= section.offsetTop - 150) {
+              current = section.getAttribute("id");
+            }
+          });
+
+          navLinks.forEach(function (link) {
+            link.classList.remove("text-primary", "font-bold", "border-b-2", "border-primary", "pb-1");
+            link.classList.add("text-on-secondary-container", "font-medium");
+            const href = link.getAttribute("href") || "";
+            if (current && href.includes(current)) {
+              link.classList.add("text-primary", "font-bold", "border-b-2", "border-primary", "pb-1");
+              link.classList.remove("text-on-secondary-container", "font-medium");
+            }
+          });
+        });
+      }
+      /* ---------- A4 PDF via jsPDF (vector text — reliable, searchable) ---------- */
+      function getResumeData() {
+        const now = new Date();
+        const totals = computeTotals(now);
+        return {
+          now: now,
+          age: computeAge(now),
+          caps: formatDuration(totals.total),
+          sentence: formatDurationSentence(totals.total),
+          perJob: totals.perJob,
+          name: "Alanerdwin Dicdican Seton",
+          phone: "+6392 780 00491",
+          facebook: "facebook.com/madeth.seton",
+          messenger: "m.me/madeth.seton",
+          address: "Purok Nangka, Brgy. Day-as, Cordova Cebu, Philippines 6017",
+          birthday: "January 7, 1985",
+          certificates: "bit.ly/3VovEXz",
+          photos: "bit.ly/3laL2Uz",
+          skills: [
+            "Heavy Steel Works",
+            "Steel bar, Rod & Mesh Layout",
+            "Technical Specs Interpretation",
+            "Blueprint Reading",
+            "Beam & Post Setup",
+            "Nihonggo-English Translation",
+            "Nihonggo-Filipino Translation",
+            "English-Filipino Translation"
+          ],
+          languages: [
+            { name: "English", level: "Proficient" },
+            { name: "Nihonggo (Japanese)", level: "Fluent" },
+            { name: "Tagalog & Cebuano", level: "Native" }
+          ],
+          jobs: [
+            {
+              title: "Steel Fixer / Rod Bar (Carpenter)",
+              company: "ISHIJI KOGYO CO. LTD.",
+              range: JOBS[0].labelStart + " - " + JOBS[0].labelEnd,
+              blurb: "Japan-based industrial construction & machinery specialist focusing on heavy infrastructure and precision engineering.",
+              bullets: [
+                "Operate advanced tools, machinery, and industrial equipment.",
+                "Measure and precisely cut steel bars to millimeter accuracy.",
+                "Expert bend and layout of steel bars, rod, and mesh frameworks.",
+                "Interpretation of complex technical specifications and blueprints.",
+                "Positioning of steel bars and plates for large-scale units.",
+                "Infrastructure: Beam, post, bridge, and large-scale house work.",
+                "Manual and automated welding assembly for mesh structures.",
+                "Precise fitting of spacers and structural fixing for concrete bases."
+              ]
+            },
+            {
+              title: "Steel Fixer / Rod Bar (Carpenter-Contractor)",
+              company: "ZZM Marine Services General Contractor",
+              range: JOBS[1].labelStart + " - " + JOBS[1].labelEnd,
+              blurb: "Specialized manpower agency focusing on maritime and heavy steel-work projects.",
+              bullets: [
+                "Maintained rigorous equipment safety and operation standards.",
+                "Executed precision cuts for high-tension steel reinforcement.",
+                "Collaborated on large-scale steel mesh layout for foundations.",
+                "Blueprint verification and on-site technical adjustments."
+              ]
+            },
+            {
+              title: "Circuit Cutting - Machine Operator",
+              company: "Lear Automotive (Netherlands) B.V. Phils. Branch",
+              range: JOBS[2].labelStart + " - " + JOBS[2].labelEnd,
+              blurb: "Automotive manufacturing company specializing in electrical parts and harness assembly.",
+              bullets: [
+                "Circuit cutting on harness assembly both front and rear part of the car based on ISO standards."
+              ]
+            }
+          ]
+        };
+      }
+
+      function loadCircularPortraitDataUrl(src, sizePx) {
+        return new Promise(function (resolve) {
+          const img = new Image();
+          img.onload = function () {
+            try {
+              const canvas = document.createElement("canvas");
+              canvas.width = sizePx;
+              canvas.height = sizePx;
+              const ctx = canvas.getContext("2d");
+              // Match sidebar soft fill so JPEG corners blend (JPEG has no alpha)
+              ctx.fillStyle = "#e1e8fd";
+              ctx.fillRect(0, 0, sizePx, sizePx);
+              ctx.beginPath();
+              ctx.arc(sizePx / 2, sizePx / 2, sizePx / 2, 0, Math.PI * 2);
+              ctx.closePath();
+              ctx.clip();
+              const scale = Math.max(sizePx / img.naturalWidth, sizePx / img.naturalHeight);
+              const w = img.naturalWidth * scale;
+              const h = img.naturalHeight * scale;
+              ctx.drawImage(img, (sizePx - w) / 2, (sizePx - h) / 2, w, h);
+              resolve(canvas.toDataURL("image/jpeg", 0.92));
+            } catch (_e) {
+              resolve(null);
+            }
+          };
+          img.onerror = function () {
+            resolve(null);
+          };
+          img.src = src;
+        });
+      }
+
+      function downloadPdf() {
+        const overlay = document.getElementById("pdf-generating-overlay");
+        const btn = document.getElementById("download-pdf-btn");
+        const btnFooter = document.getElementById("download-pdf-footer");
+        const jsPdfNs = window.jspdf;
+
+        if (!jsPdfNs || !jsPdfNs.jsPDF) {
+          alert("PDF library failed to load. Please check your internet connection and refresh.");
+          return;
+        }
+
+        overlay.classList.add("active");
+        if (btn) btn.disabled = true;
+        if (btnFooter) btnFooter.disabled = true;
+
+        // Allow overlay to paint, then build PDF (with headshot)
+        setTimeout(async function () {
+          try {
+            const { jsPDF } = jsPdfNs;
+            const data = getResumeData();
+            data.jobs.forEach(function (job, i) {
+              job.duration = job.range + " (" + formatDuration(data.perJob[i]) + ")";
+            });
+
+            const portraitDataUrl = await loadCircularPortraitDataUrl("assets/portrait.jpg", 256);
+
+            const pdf = new jsPDF({ unit: "mm", format: "a4", orientation: "portrait" });
+            const pageW = 210;
+            const pageH = 297;
+            const margin = 12;
+            const primary = [83, 0, 183];
+            const ink = [20, 27, 43];
+            const muted = [96, 99, 101];
+            const soft = [225, 232, 253];
+            const line = [204, 195, 215];
+
+            function setColor(rgb) {
+              pdf.setTextColor(rgb[0], rgb[1], rgb[2]);
+            }
+            function setFill(rgb) {
+              pdf.setFillColor(rgb[0], rgb[1], rgb[2]);
+            }
+            function setDraw(rgb) {
+              pdf.setDrawColor(rgb[0], rgb[1], rgb[2]);
+            }
+            function wrap(text, maxW, fontSize) {
+              pdf.setFontSize(fontSize);
+              return pdf.splitTextToSize(String(text), maxW);
+            }
+            function sectionLabel(text, x, y, maxW) {
+              pdf.setFont("helvetica", "bold");
+              pdf.setFontSize(8);
+              setColor(primary);
+              pdf.text(String(text).toUpperCase(), x, y);
+              setDraw(line);
+              pdf.setLineWidth(0.3);
+              pdf.line(x, y + 1.5, x + maxW, y + 1.5);
+              return y + 6;
+            }
+            function drawJob(job, x, y, maxW, accent) {
+              setDraw(accent);
+              pdf.setLineWidth(1.2);
+              pdf.line(x, y - 3, x, y + 2);
+
+              pdf.setFont("helvetica", "bold");
+              pdf.setFontSize(11);
+              setColor(ink);
+              pdf.text(job.title, x + 3, y);
+
+              pdf.setFont("helvetica", "italic");
+              pdf.setFontSize(9.5);
+              setColor(primary);
+              pdf.text(job.company, x + 3, y + 5);
+
+              pdf.setFont("helvetica", "normal");
+              pdf.setFontSize(7.5);
+              setColor(muted);
+              const durLines = wrap(job.duration, maxW - 3, 7.5);
+              pdf.text(durLines, x + 3, y + 10);
+
+              let cy = y + 10 + durLines.length * 3.2 + 1;
+              pdf.setFontSize(8);
+              setColor(muted);
+              const blurbLines = wrap(job.blurb, maxW - 3, 8);
+              pdf.text(blurbLines, x + 3, cy);
+              cy += blurbLines.length * 3.4 + 2;
+
+              pdf.setFont("helvetica", "normal");
+              pdf.setFontSize(8);
+              setColor(ink);
+              job.bullets.forEach(function (b) {
+                const lines = wrap("-  " + b, maxW - 3, 8);
+                pdf.text(lines, x + 3, cy);
+                cy += lines.length * 3.5 + 0.8;
+              });
+              return cy + 3;
+            }
+
+            /* PAGE 1 */
+            setFill([249, 249, 255]);
+            pdf.rect(0, 0, pageW, pageH, "F");
+
+            const colX = margin;
+            const colW = 62;
+            const rightX = margin + colW + 6;
+            const rightW = pageW - rightX - margin;
+
+            setFill(soft);
+            pdf.roundedRect(colX, margin, colW, pageH - margin * 2, 3, 3, "F");
+
+            let y = margin + 8;
+            const photoSize = 22;
+            const photoX = colX + (colW - photoSize) / 2;
+            const photoY = y;
+
+            if (portraitDataUrl) {
+              pdf.addImage(portraitDataUrl, "JPEG", photoX, photoY, photoSize, photoSize);
+              setDraw([220, 226, 247]);
+              pdf.setLineWidth(0.8);
+              pdf.circle(photoX + photoSize / 2, photoY + photoSize / 2, photoSize / 2, "S");
+            } else {
+              setFill(primary);
+              pdf.circle(colX + colW / 2, y + photoSize / 2, photoSize / 2, "F");
+              pdf.setFont("helvetica", "bold");
+              pdf.setFontSize(12);
+              pdf.setTextColor(255, 255, 255);
+              pdf.text("AS", colX + colW / 2, y + photoSize / 2 + 2, { align: "center" });
+            }
+
+            y += photoSize + 6;
+            pdf.setFont("helvetica", "bold");
+            pdf.setFontSize(10);
+            setColor(ink);
+            const nameLines = wrap(data.name, colW - 8, 10);
+            pdf.text(nameLines, colX + colW / 2, y, { align: "center" });
+            y += nameLines.length * 4.5 + 3;
+
+            setFill(primary);
+            pdf.roundedRect(colX + 4, y - 3.5, colW - 8, 7, 2, 2, "F");
+            pdf.setFont("helvetica", "bold");
+            pdf.setFontSize(5.5);
+            pdf.setTextColor(255, 255, 255);
+            pdf.text("STEEL FIXER / ROD BAR", colX + colW / 2, y, { align: "center" });
+            y += 8;
+
+            pdf.setFont("helvetica", "bold");
+            pdf.setFontSize(7.5);
+            setColor(primary);
+            pdf.text(data.caps, colX + colW / 2, y, { align: "center" });
+            pdf.setFont("helvetica", "normal");
+            pdf.setFontSize(7);
+            setColor(muted);
+            pdf.text("total experience", colX + colW / 2, y + 4, { align: "center" });
+            y += 12;
+
+            y = sectionLabel("Contact", colX + 4, y, colW - 8);
+            pdf.setFont("helvetica", "bold");
+            pdf.setFontSize(6.5);
+            setColor(muted);
+            pdf.text("FACEBOOK", colX + 4, y);
+            pdf.setFont("helvetica", "normal");
+            pdf.setFontSize(7.5);
+            setColor(primary);
+            pdf.text(data.facebook, colX + 4, y + 3.5);
+            y += 9;
+            pdf.setFont("helvetica", "bold");
+            pdf.setFontSize(6.5);
+            setColor(muted);
+            pdf.text("MESSENGER", colX + 4, y);
+            pdf.setFont("helvetica", "normal");
+            pdf.setFontSize(7.5);
+            setColor(primary);
+            pdf.text(data.messenger, colX + 4, y + 3.5);
+            y += 9;
+            pdf.setFont("helvetica", "bold");
+            pdf.setFontSize(6.5);
+            setColor(muted);
+            pdf.text("PHONE", colX + 4, y);
+            pdf.setFont("helvetica", "bold");
+            pdf.setFontSize(9);
+            setColor(primary);
+            pdf.text(data.phone, colX + 4, y + 4);
+            y += 12;
+
+            y = sectionLabel("Links", colX + 4, y, colW - 8);
+            pdf.setFont("helvetica", "normal");
+            pdf.setFontSize(7.5);
+            setColor(ink);
+            pdf.text("Certificates", colX + 4, y);
+            setColor(primary);
+            pdf.text(data.certificates, colX + 4, y + 3.5);
+            y += 9;
+            setColor(ink);
+            pdf.text("Project Photos", colX + 4, y);
+            setColor(primary);
+            pdf.text(data.photos, colX + 4, y + 3.5);
+            y += 12;
+
+            y = sectionLabel("Skills", colX + 4, y, colW - 8);
+            pdf.setFont("helvetica", "normal");
+            pdf.setFontSize(7.5);
+            setColor(ink);
+            data.skills.forEach(function (skill) {
+              const lines = wrap("- " + skill, colW - 8, 7.5);
+              pdf.text(lines, colX + 4, y);
+              y += lines.length * 3.3 + 1.2;
+            });
+            y += 4;
+
+            y = sectionLabel("Languages", colX + 4, y, colW - 8);
+            data.languages.forEach(function (lang) {
+              pdf.setFont("helvetica", "normal");
+              pdf.setFontSize(7.5);
+              setColor(ink);
+              pdf.text(lang.name, colX + 4, y);
+              pdf.setFont("helvetica", "bold");
+              pdf.setFontSize(6.5);
+              setColor(primary);
+              pdf.text(lang.level.toUpperCase(), colX + colW - 4, y, { align: "right" });
+              y += 5;
+            });
+
+            let ry = margin + 4;
+            setFill(soft);
+            pdf.roundedRect(rightX, ry, rightW, 28, 2.5, 2.5, "F");
+            pdf.setFont("helvetica", "bold");
+            pdf.setFontSize(7);
+            setColor(primary);
+            pdf.text("TOTAL EXPERIENCE  |  " + data.caps, rightX + 4, ry + 7);
+            pdf.setFont("helvetica", "bold");
+            pdf.setFontSize(13);
+            setColor(ink);
+            pdf.text("Dedicated Professional Excellence", rightX + 4, ry + 14);
+            pdf.setFont("helvetica", "normal");
+            pdf.setFontSize(8);
+            setColor(muted);
+            const heroLines = wrap(
+              "Steel Fixer and Rod Bar Specialist with " +
+                data.sentence +
+                " of international experience in industrial construction, automotive manufacturing, and machinery infrastructure.",
+              rightW - 8,
+              8
+            );
+            pdf.text(heroLines, rightX + 4, ry + 20);
+            ry += 34;
+
+            pdf.setFont("helvetica", "bold");
+            pdf.setFontSize(8);
+            setColor(primary);
+            pdf.text("WORK EXPERIENCE", rightX, ry);
+            setDraw(primary);
+            pdf.setLineWidth(0.4);
+            pdf.line(rightX + 32, ry - 1, rightX + rightW, ry - 1);
+            ry += 7;
+
+            ry = drawJob(data.jobs[0], rightX, ry, rightW, primary);
+            ry = drawJob(data.jobs[1], rightX, ry, rightW, line);
+
+            pdf.setFont("helvetica", "normal");
+            pdf.setFontSize(7);
+            setColor(muted);
+            pdf.text("PAGE 1 OF 2", pageW - margin, pageH - 7, { align: "right" });
+
+            /* PAGE 2 */
+            pdf.addPage();
+            setFill([249, 249, 255]);
+            pdf.rect(0, 0, pageW, pageH, "F");
+
+            let py = margin + 4;
+            pdf.setFont("helvetica", "bold");
+            pdf.setFontSize(8);
+            setColor(primary);
+            pdf.text("WORK EXPERIENCE (CONTINUED)", margin, py);
+            setDraw(primary);
+            pdf.setLineWidth(0.4);
+            pdf.line(margin + 52, py - 1, pageW - margin, py - 1);
+            py += 8;
+
+            py = drawJob(data.jobs[2], margin, py, pageW - margin * 2, line);
+            py += 4;
+
+            py = sectionLabel("Education History", margin, py, pageW - margin * 2);
+            setFill([255, 255, 255]);
+            setDraw(soft);
+            pdf.setLineWidth(0.4);
+            pdf.roundedRect(margin, py - 2, pageW - margin * 2, 16, 2, 2, "FD");
+            pdf.setFont("helvetica", "bold");
+            pdf.setFontSize(11);
+            setColor(ink);
+            pdf.text("Bohol National High School", margin + 4, py + 4);
+            pdf.setFont("helvetica", "normal");
+            pdf.setFontSize(9);
+            setColor(muted);
+            pdf.text("High School Graduate  |  Cabul-an, Buenavista, Bohol", margin + 4, py + 10);
+            py += 22;
+
+            py = sectionLabel("Personal Information", margin, py, pageW - margin * 2);
+            setFill([255, 255, 255]);
+            setDraw(soft);
+            pdf.roundedRect(margin, py - 2, pageW - margin * 2, 42, 2, 2, "FD");
+
+            const infoLeft = margin + 4;
+            const infoMid = margin + (pageW - margin * 2) / 2;
+            pdf.setFont("helvetica", "bold");
+            pdf.setFontSize(6.5);
+            setColor(muted);
+            pdf.text("AGE", infoLeft, py + 4);
+            pdf.text("BIRTHDAY", infoMid, py + 4);
+            pdf.setFont("helvetica", "bold");
+            pdf.setFontSize(11);
+            setColor(ink);
+            pdf.text(data.age + " years old", infoLeft, py + 10);
+            pdf.text(data.birthday, infoMid, py + 10);
+
+            pdf.setFont("helvetica", "bold");
+            pdf.setFontSize(6.5);
+            setColor(muted);
+            pdf.text("CURRENT ADDRESS", infoLeft, py + 18);
+            pdf.setFont("helvetica", "normal");
+            pdf.setFontSize(9);
+            setColor(ink);
+            const addrLines = wrap(data.address, pageW - margin * 2 - 8, 9);
+            pdf.text(addrLines, infoLeft, py + 24);
+
+            const phoneY = py + 24 + addrLines.length * 4 + 2;
+            pdf.setFont("helvetica", "bold");
+            pdf.setFontSize(6.5);
+            setColor(muted);
+            pdf.text("CONTACT NUMBER", infoLeft, phoneY);
+            pdf.setFont("helvetica", "bold");
+            pdf.setFontSize(12);
+            setColor(primary);
+            pdf.text(data.phone, infoLeft, phoneY + 6);
+            py += 48;
+
+            py = sectionLabel("Summary for Hiring Teams", margin, py, pageW - margin * 2);
+            setFill(soft);
+            pdf.roundedRect(margin, py - 2, pageW - margin * 2, 28, 2, 2, "F");
+            pdf.setFont("helvetica", "normal");
+            pdf.setFontSize(9);
+            setColor(ink);
+            const summary = wrap(
+              "Candidate brings " +
+                data.sentence +
+                " across steel fixing, rod bar carpentry, and automotive circuit cutting - including long-term work in Japan with Ishiji Kogyo Co. Ltd. Fluent in Nihonggo with proficient English.",
+              pageW - margin * 2 - 8,
+              9
+            );
+            pdf.text(summary, margin + 4, py + 5);
+            py += 34;
+
+            pdf.setFont("helvetica", "normal");
+            pdf.setFontSize(7.5);
+            setColor(muted);
+            pdf.text(
+              "(c) " + data.now.getFullYear() + " Alanerdwin Dicdican Seton  |  Confidential hiring reference",
+              margin,
+              py
+            );
+            pdf.text("PAGE 2 OF 2", pageW - margin, pageH - 7, { align: "right" });
+
+            // Blob download (more reliable than pdf.save in some browsers)
+            const blob = pdf.output("blob");
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "Alanerdwin-Seton-Resume.pdf";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            setTimeout(function () {
+              URL.revokeObjectURL(url);
+            }, 2000);
+          } catch (err) {
+            console.error("PDF generation failed:", err);
+            alert("Could not generate PDF. Please try again.");
+          } finally {
+            overlay.classList.remove("active");
+            if (btn) btn.disabled = false;
+            if (btnFooter) btnFooter.disabled = false;
+          }
+        }, 50);
+      }
+
+      document.getElementById("download-pdf-btn").addEventListener("click", downloadPdf);
+      document.getElementById("download-pdf-footer").addEventListener("click", downloadPdf);
+
+      updateExperienceUI();
+      initScrollSpy();
+    })();
+  </script>
+</body>
+</html>

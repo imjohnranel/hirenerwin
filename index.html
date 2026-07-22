@@ -425,7 +425,7 @@
               <p class="font-body-md text-body-md italic text-primary">ZZM Marine Services General Contractor</p>
             </div>
             <div class="bg-surface-container-low px-4 py-1 rounded-full shrink-0">
-              <span class="font-label-caps text-[11px] text-on-surface-variant job-duration">JULY 2011 – SEPT 2011 (2 MONTHS)</span>
+              <span class="font-label-caps text-[11px] text-on-surface-variant job-duration">JULY 2011 – SEPT 2014 (3 YEARS & 2 MONTHS)</span>
             </div>
           </div>
           <p class="font-body-sm text-body-sm text-on-secondary-container mb-stack-md">Specialized manpower agency focusing on maritime and heavy steel-work projects.</p>
@@ -533,7 +533,7 @@
 
       const JOBS = [
         { start: new Date(2015, 8, 1), end: null, labelStart: "SEPT 2015", labelEnd: "JUL 2026" },
-        { start: new Date(2011, 6, 1), end: new Date(2011, 8, 1), labelStart: "JULY 2011", labelEnd: "SEPT 2011" },
+        { start: new Date(2011, 6, 1), end: new Date(2011, 8, 1), labelStart: "JULY 2011", labelEnd: "SEPT 2014" },
         { start: new Date(2003, 6, 1), end: new Date(2011, 3, 1), labelStart: "JULY 2003", labelEnd: "APRIL 2011" }
       ];
 
@@ -792,13 +792,13 @@
             }
             function sectionLabel(text, x, y, maxW) {
               pdf.setFont("helvetica", "bold");
-              pdf.setFontSize(8);
+              pdf.setFontSize(10);
               setColor(primary);
               pdf.text(String(text).toUpperCase(), x, y);
               setDraw(line);
-              pdf.setLineWidth(0.3);
-              pdf.line(x, y + 1.5, x + maxW, y + 1.5);
-              return y + 6;
+              pdf.setLineWidth(0.35);
+              pdf.line(x, y + 1.8, x + maxW, y + 1.8);
+              return y + 7;
             }
             function drawJob(job, x, y, maxW, accent) {
               setDraw(accent);
@@ -806,37 +806,37 @@
               pdf.line(x, y - 3, x, y + 2);
 
               pdf.setFont("helvetica", "bold");
-              pdf.setFontSize(11);
+              pdf.setFontSize(12);
               setColor(ink);
               pdf.text(job.title, x + 3, y);
 
               pdf.setFont("helvetica", "italic");
-              pdf.setFontSize(9.5);
+              pdf.setFontSize(10.5);
               setColor(primary);
-              pdf.text(job.company, x + 3, y + 5);
+              pdf.text(job.company, x + 3, y + 5.5);
 
               pdf.setFont("helvetica", "normal");
-              pdf.setFontSize(7.5);
+              pdf.setFontSize(9);
               setColor(muted);
-              const durLines = wrap(job.duration, maxW - 3, 7.5);
-              pdf.text(durLines, x + 3, y + 10);
+              const durLines = wrap(job.duration, maxW - 3, 9);
+              pdf.text(durLines, x + 3, y + 11);
 
-              let cy = y + 10 + durLines.length * 3.2 + 1;
-              pdf.setFontSize(8);
+              let cy = y + 11 + durLines.length * 4 + 1.5;
+              pdf.setFontSize(9.5);
               setColor(muted);
-              const blurbLines = wrap(job.blurb, maxW - 3, 8);
+              const blurbLines = wrap(job.blurb, maxW - 3, 9.5);
               pdf.text(blurbLines, x + 3, cy);
-              cy += blurbLines.length * 3.4 + 2;
+              cy += blurbLines.length * 4.2 + 2.5;
 
               pdf.setFont("helvetica", "normal");
-              pdf.setFontSize(8);
+              pdf.setFontSize(9.5);
               setColor(ink);
               job.bullets.forEach(function (b) {
-                const lines = wrap("-  " + b, maxW - 3, 8);
+                const lines = wrap("-  " + b, maxW - 3, 9.5);
                 pdf.text(lines, x + 3, cy);
-                cy += lines.length * 3.5 + 0.8;
+                cy += lines.length * 4.2 + 1;
               });
-              return cy + 3;
+              return cy + 3.5;
             }
 
             /* PAGE 1 */
@@ -852,7 +852,7 @@
             pdf.roundedRect(colX, margin, colW, pageH - margin * 2, 3, 3, "F");
 
             let y = margin + 8;
-            const photoSize = 22;
+            const photoSize = 26;
             const photoX = colX + (colW - photoSize) / 2;
             const photoY = y;
 
@@ -865,142 +865,142 @@
               setFill(primary);
               pdf.circle(colX + colW / 2, y + photoSize / 2, photoSize / 2, "F");
               pdf.setFont("helvetica", "bold");
-              pdf.setFontSize(12);
+              pdf.setFontSize(13);
               pdf.setTextColor(255, 255, 255);
               pdf.text("AS", colX + colW / 2, y + photoSize / 2 + 2, { align: "center" });
             }
 
             y += photoSize + 6;
             pdf.setFont("helvetica", "bold");
-            pdf.setFontSize(10);
+            pdf.setFontSize(11);
             setColor(ink);
-            const nameLines = wrap(data.name, colW - 8, 10);
+            const nameLines = wrap(data.name, colW - 8, 11);
             pdf.text(nameLines, colX + colW / 2, y, { align: "center" });
-            y += nameLines.length * 4.5 + 3;
+            y += nameLines.length * 5 + 3;
 
             setFill(primary);
-            pdf.roundedRect(colX + 4, y - 3.5, colW - 8, 7, 2, 2, "F");
+            pdf.roundedRect(colX + 4, y - 4, colW - 8, 8, 2, 2, "F");
             pdf.setFont("helvetica", "bold");
-            pdf.setFontSize(5.5);
-            pdf.setTextColor(255, 255, 255);
-            pdf.text("STEEL FIXER / ROD BAR", colX + colW / 2, y, { align: "center" });
-            y += 8;
-
-            pdf.setFont("helvetica", "bold");
-            pdf.setFontSize(7.5);
-            setColor(primary);
-            pdf.text(data.caps, colX + colW / 2, y, { align: "center" });
-            pdf.setFont("helvetica", "normal");
             pdf.setFontSize(7);
-            setColor(muted);
-            pdf.text("total experience", colX + colW / 2, y + 4, { align: "center" });
-            y += 12;
+            pdf.setTextColor(255, 255, 255);
+            pdf.text("STEEL FIXER / ROD BAR", colX + colW / 2, y + 0.5, { align: "center" });
+            y += 10;
 
-            y = sectionLabel("Contact", colX + 4, y, colW - 8);
-            pdf.setFont("helvetica", "bold");
-            pdf.setFontSize(6.5);
-            setColor(muted);
-            pdf.text("FACEBOOK", colX + 4, y);
-            pdf.setFont("helvetica", "normal");
-            pdf.setFontSize(7.5);
-            setColor(primary);
-            pdf.text(data.facebook, colX + 4, y + 3.5);
-            y += 9;
-            pdf.setFont("helvetica", "bold");
-            pdf.setFontSize(6.5);
-            setColor(muted);
-            pdf.text("MESSENGER", colX + 4, y);
-            pdf.setFont("helvetica", "normal");
-            pdf.setFontSize(7.5);
-            setColor(primary);
-            pdf.text(data.messenger, colX + 4, y + 3.5);
-            y += 9;
-            pdf.setFont("helvetica", "bold");
-            pdf.setFontSize(6.5);
-            setColor(muted);
-            pdf.text("PHONE", colX + 4, y);
             pdf.setFont("helvetica", "bold");
             pdf.setFontSize(9);
             setColor(primary);
-            pdf.text(data.phone, colX + 4, y + 4);
-            y += 12;
+            pdf.text(data.caps, colX + colW / 2, y, { align: "center" });
+            pdf.setFont("helvetica", "normal");
+            pdf.setFontSize(8);
+            setColor(muted);
+            pdf.text("total experience", colX + colW / 2, y + 4.5, { align: "center" });
+            y += 13;
+
+            y = sectionLabel("Contact", colX + 4, y, colW - 8);
+            pdf.setFont("helvetica", "bold");
+            pdf.setFontSize(8);
+            setColor(muted);
+            pdf.text("FACEBOOK", colX + 4, y);
+            pdf.setFont("helvetica", "normal");
+            pdf.setFontSize(9);
+            setColor(primary);
+            pdf.text(data.facebook, colX + 4, y + 4);
+            y += 11;
+            pdf.setFont("helvetica", "bold");
+            pdf.setFontSize(8);
+            setColor(muted);
+            pdf.text("MESSENGER", colX + 4, y);
+            pdf.setFont("helvetica", "normal");
+            pdf.setFontSize(9);
+            setColor(primary);
+            pdf.text(data.messenger, colX + 4, y + 4);
+            y += 11;
+            pdf.setFont("helvetica", "bold");
+            pdf.setFontSize(8);
+            setColor(muted);
+            pdf.text("PHONE", colX + 4, y);
+            pdf.setFont("helvetica", "bold");
+            pdf.setFontSize(10.5);
+            setColor(primary);
+            pdf.text(data.phone, colX + 4, y + 4.5);
+            y += 13;
 
             y = sectionLabel("Links", colX + 4, y, colW - 8);
             pdf.setFont("helvetica", "normal");
-            pdf.setFontSize(7.5);
+            pdf.setFontSize(9);
             setColor(ink);
             pdf.text("Certificates", colX + 4, y);
             setColor(primary);
-            pdf.text(data.certificates, colX + 4, y + 3.5);
-            y += 9;
+            pdf.text(data.certificates, colX + 4, y + 4);
+            y += 11;
             setColor(ink);
             pdf.text("Project Photos", colX + 4, y);
             setColor(primary);
-            pdf.text(data.photos, colX + 4, y + 3.5);
-            y += 12;
+            pdf.text(data.photos, colX + 4, y + 4);
+            y += 13;
 
             y = sectionLabel("Skills", colX + 4, y, colW - 8);
             pdf.setFont("helvetica", "normal");
-            pdf.setFontSize(7.5);
+            pdf.setFontSize(9);
             setColor(ink);
             data.skills.forEach(function (skill) {
-              const lines = wrap("- " + skill, colW - 8, 7.5);
+              const lines = wrap("- " + skill, colW - 8, 9);
               pdf.text(lines, colX + 4, y);
-              y += lines.length * 3.3 + 1.2;
+              y += lines.length * 4 + 1.4;
             });
             y += 4;
 
             y = sectionLabel("Languages", colX + 4, y, colW - 8);
             data.languages.forEach(function (lang) {
               pdf.setFont("helvetica", "normal");
-              pdf.setFontSize(7.5);
+              pdf.setFontSize(9);
               setColor(ink);
               pdf.text(lang.name, colX + 4, y);
               pdf.setFont("helvetica", "bold");
-              pdf.setFontSize(6.5);
+              pdf.setFontSize(8);
               setColor(primary);
               pdf.text(lang.level.toUpperCase(), colX + colW - 4, y, { align: "right" });
-              y += 5;
+              y += 5.5;
             });
 
             let ry = margin + 4;
             setFill(soft);
-            pdf.roundedRect(rightX, ry, rightW, 28, 2.5, 2.5, "F");
+            pdf.roundedRect(rightX, ry, rightW, 32, 2.5, 2.5, "F");
             pdf.setFont("helvetica", "bold");
-            pdf.setFontSize(7);
+            pdf.setFontSize(8.5);
             setColor(primary);
             pdf.text("TOTAL EXPERIENCE  |  " + data.caps, rightX + 4, ry + 7);
             pdf.setFont("helvetica", "bold");
             pdf.setFontSize(13);
             setColor(ink);
-            pdf.text("Dedicated Professional Excellence", rightX + 4, ry + 14);
+            pdf.text("Dedicated Professional Excellence", rightX + 4, ry + 15);
             pdf.setFont("helvetica", "normal");
-            pdf.setFontSize(8);
+            pdf.setFontSize(9.5);
             setColor(muted);
             const heroLines = wrap(
               "Steel Fixer and Rod Bar Specialist with " +
                 data.sentence +
                 " of international experience in industrial construction, automotive manufacturing, and machinery infrastructure.",
               rightW - 8,
-              8
+              9.5
             );
-            pdf.text(heroLines, rightX + 4, ry + 20);
-            ry += 34;
+            pdf.text(heroLines, rightX + 4, ry + 21.5);
+            ry += 38;
 
             pdf.setFont("helvetica", "bold");
-            pdf.setFontSize(8);
+            pdf.setFontSize(10);
             setColor(primary);
             pdf.text("WORK EXPERIENCE", rightX, ry);
             setDraw(primary);
             pdf.setLineWidth(0.4);
-            pdf.line(rightX + 32, ry - 1, rightX + rightW, ry - 1);
-            ry += 7;
+            pdf.line(rightX + 40, ry - 1, rightX + rightW, ry - 1);
+            ry += 8;
 
             ry = drawJob(data.jobs[0], rightX, ry, rightW, primary);
             ry = drawJob(data.jobs[1], rightX, ry, rightW, line);
 
             pdf.setFont("helvetica", "normal");
-            pdf.setFontSize(7);
+            pdf.setFontSize(8);
             setColor(muted);
             pdf.text("PAGE 1 OF 2", pageW - margin, pageH - 7, { align: "right" });
 
@@ -1011,95 +1011,96 @@
 
             let py = margin + 4;
             pdf.setFont("helvetica", "bold");
-            pdf.setFontSize(8);
+            pdf.setFontSize(10);
             setColor(primary);
             pdf.text("WORK EXPERIENCE (CONTINUED)", margin, py);
             setDraw(primary);
             pdf.setLineWidth(0.4);
-            pdf.line(margin + 52, py - 1, pageW - margin, py - 1);
-            py += 8;
+            pdf.line(margin + 62, py - 1, pageW - margin, py - 1);
+            py += 9;
 
             py = drawJob(data.jobs[2], margin, py, pageW - margin * 2, line);
-            py += 4;
+            py += 5;
 
             py = sectionLabel("Education History", margin, py, pageW - margin * 2);
             setFill([255, 255, 255]);
             setDraw(soft);
             pdf.setLineWidth(0.4);
-            pdf.roundedRect(margin, py - 2, pageW - margin * 2, 16, 2, 2, "FD");
+            pdf.roundedRect(margin, py - 2, pageW - margin * 2, 18, 2, 2, "FD");
             pdf.setFont("helvetica", "bold");
-            pdf.setFontSize(11);
+            pdf.setFontSize(12);
             setColor(ink);
-            pdf.text("Bohol National High School", margin + 4, py + 4);
+            pdf.text("Bohol National High School", margin + 4, py + 5);
             pdf.setFont("helvetica", "normal");
-            pdf.setFontSize(9);
+            pdf.setFontSize(10);
             setColor(muted);
-            pdf.text("High School Graduate  |  Cabul-an, Buenavista, Bohol", margin + 4, py + 10);
-            py += 22;
+            pdf.text("High School Graduate  |  Cabul-an, Buenavista, Bohol", margin + 4, py + 11.5);
+            py += 24;
 
             py = sectionLabel("Personal Information", margin, py, pageW - margin * 2);
             setFill([255, 255, 255]);
             setDraw(soft);
-            pdf.roundedRect(margin, py - 2, pageW - margin * 2, 42, 2, 2, "FD");
+            pdf.roundedRect(margin, py - 2, pageW - margin * 2, 48, 2, 2, "FD");
 
             const infoLeft = margin + 4;
             const infoMid = margin + (pageW - margin * 2) / 2;
             pdf.setFont("helvetica", "bold");
-            pdf.setFontSize(6.5);
+            pdf.setFontSize(8);
             setColor(muted);
-            pdf.text("AGE", infoLeft, py + 4);
-            pdf.text("BIRTHDAY", infoMid, py + 4);
+            pdf.text("AGE", infoLeft, py + 5);
+            pdf.text("BIRTHDAY", infoMid, py + 5);
             pdf.setFont("helvetica", "bold");
-            pdf.setFontSize(11);
+            pdf.setFontSize(12);
             setColor(ink);
-            pdf.text(data.age + " years old", infoLeft, py + 10);
-            pdf.text(data.birthday, infoMid, py + 10);
+            pdf.text(data.age + " years old", infoLeft, py + 12);
+            pdf.text(data.birthday, infoMid, py + 12);
 
             pdf.setFont("helvetica", "bold");
-            pdf.setFontSize(6.5);
+            pdf.setFontSize(8);
             setColor(muted);
-            pdf.text("CURRENT ADDRESS", infoLeft, py + 18);
+            pdf.text("CURRENT ADDRESS", infoLeft, py + 21);
             pdf.setFont("helvetica", "normal");
-            pdf.setFontSize(9);
+            pdf.setFontSize(10);
             setColor(ink);
-            const addrLines = wrap(data.address, pageW - margin * 2 - 8, 9);
-            pdf.text(addrLines, infoLeft, py + 24);
+            const addrLines = wrap(data.address, pageW - margin * 2 - 8, 10);
+            pdf.text(addrLines, infoLeft, py + 28);
 
-            const phoneY = py + 24 + addrLines.length * 4 + 2;
+            const phoneY = py + 28 + addrLines.length * 4.5 + 2;
             pdf.setFont("helvetica", "bold");
-            pdf.setFontSize(6.5);
+            pdf.setFontSize(8);
             setColor(muted);
             pdf.text("CONTACT NUMBER", infoLeft, phoneY);
             pdf.setFont("helvetica", "bold");
-            pdf.setFontSize(12);
+            pdf.setFontSize(13);
             setColor(primary);
-            pdf.text(data.phone, infoLeft, phoneY + 6);
-            py += 48;
+            pdf.text(data.phone, infoLeft, phoneY + 7);
+            py += 54;
 
             py = sectionLabel("Summary for Hiring Teams", margin, py, pageW - margin * 2);
             setFill(soft);
-            pdf.roundedRect(margin, py - 2, pageW - margin * 2, 28, 2, 2, "F");
+            pdf.roundedRect(margin, py - 2, pageW - margin * 2, 32, 2, 2, "F");
             pdf.setFont("helvetica", "normal");
-            pdf.setFontSize(9);
+            pdf.setFontSize(10);
             setColor(ink);
             const summary = wrap(
               "Candidate brings " +
                 data.sentence +
                 " across steel fixing, rod bar carpentry, and automotive circuit cutting - including long-term work in Japan with Ishiji Kogyo Co. Ltd. Fluent in Nihonggo with proficient English.",
               pageW - margin * 2 - 8,
-              9
+              10
             );
-            pdf.text(summary, margin + 4, py + 5);
-            py += 34;
+            pdf.text(summary, margin + 4, py + 6);
+            py += 38;
 
             pdf.setFont("helvetica", "normal");
-            pdf.setFontSize(7.5);
+            pdf.setFontSize(8.5);
             setColor(muted);
             pdf.text(
               "(c) " + data.now.getFullYear() + " Alanerdwin Dicdican Seton  |  Confidential hiring reference",
               margin,
               py
             );
+            pdf.setFontSize(8);
             pdf.text("PAGE 2 OF 2", pageW - margin, pageH - 7, { align: "right" });
 
             // Blob download (more reliable than pdf.save in some browsers)

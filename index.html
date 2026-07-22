@@ -533,7 +533,7 @@
 
       const JOBS = [
         { start: new Date(2015, 8, 1), end: null, labelStart: "SEPT 2015", labelEnd: "JUL 2026" },
-        { start: new Date(2011, 6, 1), end: new Date(2011, 8, 1), labelStart: "JULY 2011", labelEnd: "SEPT 2014" },
+        { start: new Date(2011, 6, 1), end: new Date(2014, 8, 1), labelStart: "JULY 2011", labelEnd: "SEPT 2014" },
         { start: new Date(2003, 6, 1), end: new Date(2011, 3, 1), labelStart: "JULY 2003", labelEnd: "APRIL 2011" }
       ];
 
@@ -550,7 +550,7 @@
         const m = months === 1 ? "1 MONTH" : months + " MONTHS";
         if (years === 0) return m;
         if (months === 0) return y;
-        return y + ", " + m;
+        return y + " & " + m;
       }
 
       function formatDurationSentence(totalMonths) {
